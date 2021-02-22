@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/fairroot/!svn/ver/21866/cbmroot/development/ikulakov/STAR/trunk_Vc/code/Parallel
+END
+AliHLTTPCCAInputData.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/fairroot/!svn/ver/21866/cbmroot/development/ikulakov/STAR/trunk_Vc/code/Parallel/AliHLTTPCCAInputData.h
+END
+multithread.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/fairroot/!svn/ver/21866/cbmroot/development/ikulakov/STAR/trunk_Vc/code/Parallel/multithread.h
+END
+AliHLTTPCCAInputSettings.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/fairroot/!svn/ver/21414/cbmroot/development/ikulakov/STAR/trunk_Vc/code/Parallel/AliHLTTPCCAInputSettings.cxx
+END
+parallel_for_simpleHT.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/fairroot/!svn/ver/21414/cbmroot/development/ikulakov/STAR/trunk_Vc/code/Parallel/parallel_for_simpleHT.h
+END
+AliHLTTPCCAInputSettings.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/fairroot/!svn/ver/21414/cbmroot/development/ikulakov/STAR/trunk_Vc/code/Parallel/AliHLTTPCCAInputSettings.h
+END
+parallel_for_simple.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/fairroot/!svn/ver/21414/cbmroot/development/ikulakov/STAR/trunk_Vc/code/Parallel/parallel_for_simple.h
+END
+AliHLTTPCCAInputData.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/fairroot/!svn/ver/21414/cbmroot/development/ikulakov/STAR/trunk_Vc/code/Parallel/AliHLTTPCCAInputData.cxx
+END
+parallel_for_simpleEqNThr.h
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/fairroot/!svn/ver/21414/cbmroot/development/ikulakov/STAR/trunk_Vc/code/Parallel/parallel_for_simpleEqNThr.h
+END

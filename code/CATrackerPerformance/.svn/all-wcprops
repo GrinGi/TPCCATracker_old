@@ -1,0 +1,185 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/fairroot/!svn/ver/28913/cbmroot/development/ikulakov/STAR/trunk_Vc/code/CATrackerPerformance
+END
+AliHLTTPCCASlicesPerformance.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/fairroot/!svn/ver/21399/cbmroot/development/ikulakov/STAR/trunk_Vc/code/CATrackerPerformance/AliHLTTPCCASlicesPerformance.cxx
+END
+AliHLTTPCCASlicesLinksPerformance.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/fairroot/!svn/ver/21399/cbmroot/development/ikulakov/STAR/trunk_Vc/code/CATrackerPerformance/AliHLTTPCCASlicesLinksPerformance.cxx
+END
+AliHLTTPCCADisplay.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/fairroot/!svn/ver/28163/cbmroot/development/ikulakov/STAR/trunk_Vc/code/CATrackerPerformance/AliHLTTPCCADisplay.cxx
+END
+AliHLTTPCCATrackPerformanceBase.h
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/fairroot/!svn/ver/24415/cbmroot/development/ikulakov/STAR/trunk_Vc/code/CATrackerPerformance/AliHLTTPCCATrackPerformanceBase.h
+END
+AliHLTTPCCAStiPerformance.h
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/fairroot/!svn/ver/21399/cbmroot/development/ikulakov/STAR/trunk_Vc/code/CATrackerPerformance/AliHLTTPCCAStiPerformance.h
+END
+AliHLTTPCCASlicePerformance.h
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/fairroot/!svn/ver/21399/cbmroot/development/ikulakov/STAR/trunk_Vc/code/CATrackerPerformance/AliHLTTPCCASlicePerformance.h
+END
+AliHLTTPCCAGlobalPerformance.h
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/fairroot/!svn/ver/21399/cbmroot/development/ikulakov/STAR/trunk_Vc/code/CATrackerPerformance/AliHLTTPCCAGlobalPerformance.h
+END
+AliHLTTPCCASliceLinksPerformance.h
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/fairroot/!svn/ver/21399/cbmroot/development/ikulakov/STAR/trunk_Vc/code/CATrackerPerformance/AliHLTTPCCASliceLinksPerformance.h
+END
+AliHLTTPCCAMCPoint.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/fairroot/!svn/ver/21195/cbmroot/development/ikulakov/STAR/trunk_Vc/code/CATrackerPerformance/AliHLTTPCCAMCPoint.cxx
+END
+AliHLTTPCCAMCTrack.h
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/fairroot/!svn/ver/21399/cbmroot/development/ikulakov/STAR/trunk_Vc/code/CATrackerPerformance/AliHLTTPCCAMCTrack.h
+END
+AliHLTTPCCAGlobalSlicesPerformance.h
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/fairroot/!svn/ver/21399/cbmroot/development/ikulakov/STAR/trunk_Vc/code/CATrackerPerformance/AliHLTTPCCAGlobalSlicesPerformance.h
+END
+AliHLTTPCPerformanceBase.h
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/fairroot/!svn/ver/24415/cbmroot/development/ikulakov/STAR/trunk_Vc/code/CATrackerPerformance/AliHLTTPCPerformanceBase.h
+END
+Counters.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/fairroot/!svn/ver/21195/cbmroot/development/ikulakov/STAR/trunk_Vc/code/CATrackerPerformance/Counters.h
+END
+AliHLTTPCCATrackPerformanceBase.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/fairroot/!svn/ver/24415/cbmroot/development/ikulakov/STAR/trunk_Vc/code/CATrackerPerformance/AliHLTTPCCATrackPerformanceBase.cxx
+END
+AliHLTTPCCAStiPerformance.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/fairroot/!svn/ver/24415/cbmroot/development/ikulakov/STAR/trunk_Vc/code/CATrackerPerformance/AliHLTTPCCAStiPerformance.cxx
+END
+AliHLTTPCCASlicePerformance.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/fairroot/!svn/ver/24415/cbmroot/development/ikulakov/STAR/trunk_Vc/code/CATrackerPerformance/AliHLTTPCCASlicePerformance.cxx
+END
+AliHLTTPCCAGlobalPerformance.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/fairroot/!svn/ver/24415/cbmroot/development/ikulakov/STAR/trunk_Vc/code/CATrackerPerformance/AliHLTTPCCAGlobalPerformance.cxx
+END
+AliHLTTPCCASliceLinksPerformance.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/fairroot/!svn/ver/28913/cbmroot/development/ikulakov/STAR/trunk_Vc/code/CATrackerPerformance/AliHLTTPCCASliceLinksPerformance.cxx
+END
+AliHLTTPCCounters.h
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/fairroot/!svn/ver/25271/cbmroot/development/ikulakov/STAR/trunk_Vc/code/CATrackerPerformance/AliHLTTPCCounters.h
+END
+AliHLTTPCCAMCTrack.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/fairroot/!svn/ver/21377/cbmroot/development/ikulakov/STAR/trunk_Vc/code/CATrackerPerformance/AliHLTTPCCAMCTrack.cxx
+END
+AliHLTTPCCAGlobalSlicesPerformance.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/fairroot/!svn/ver/22048/cbmroot/development/ikulakov/STAR/trunk_Vc/code/CATrackerPerformance/AliHLTTPCCAGlobalSlicesPerformance.cxx
+END
+AliHLTTPCCAPerformance.h
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/fairroot/!svn/ver/28163/cbmroot/development/ikulakov/STAR/trunk_Vc/code/CATrackerPerformance/AliHLTTPCCAPerformance.h
+END
+AliHLTTPCPerformanceBase.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/fairroot/!svn/ver/24415/cbmroot/development/ikulakov/STAR/trunk_Vc/code/CATrackerPerformance/AliHLTTPCPerformanceBase.cxx
+END
+AliHLTTPCCAMergerPerformance.h
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/fairroot/!svn/ver/21399/cbmroot/development/ikulakov/STAR/trunk_Vc/code/CATrackerPerformance/AliHLTTPCCAMergerPerformance.h
+END
+AliHLTTPCCASlicesPerformance.h
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/fairroot/!svn/ver/21399/cbmroot/development/ikulakov/STAR/trunk_Vc/code/CATrackerPerformance/AliHLTTPCCASlicesPerformance.h
+END
+AliHLTTPCCASlicesLinksPerformance.h
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/fairroot/!svn/ver/21299/cbmroot/development/ikulakov/STAR/trunk_Vc/code/CATrackerPerformance/AliHLTTPCCASlicesLinksPerformance.h
+END
+AliHLTTPCCADisplay.h
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/fairroot/!svn/ver/21299/cbmroot/development/ikulakov/STAR/trunk_Vc/code/CATrackerPerformance/AliHLTTPCCADisplay.h
+END
+AliHLTTPCCAMCPoint.h
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/fairroot/!svn/ver/21399/cbmroot/development/ikulakov/STAR/trunk_Vc/code/CATrackerPerformance/AliHLTTPCCAMCPoint.h
+END
+AliHLTTPCCAPerformance.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/fairroot/!svn/ver/25271/cbmroot/development/ikulakov/STAR/trunk_Vc/code/CATrackerPerformance/AliHLTTPCCAPerformance.cxx
+END
+AliHLTTPCCAMergerPerformance.cxx
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/fairroot/!svn/ver/21377/cbmroot/development/ikulakov/STAR/trunk_Vc/code/CATrackerPerformance/AliHLTTPCCAMergerPerformance.cxx
+END
