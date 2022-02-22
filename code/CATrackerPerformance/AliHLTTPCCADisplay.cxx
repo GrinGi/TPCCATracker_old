@@ -149,29 +149,11 @@ void AliHLTTPCCADisplay::Init()
     fPT->SetCanvas( fCanvasPT );
     fPT->SetTitle( "PhiTeta" );
     fPT->cd();
-//    fPT->Range( -1.5, -0.7, 1.5, 1.2 );
-//    fPT->Range( -1.5, -1.5, 1.5, 1.5 );
-//    fPT->Range( -1.5, 0, 1.5, 1.5 );
     fPT->Range( -1.7, 0, 1.7, 25 );
-//    fPT->Range( -1.5, 0, 1.5, 3 );
-//    fPT->Range( -1.5, -0.15, 1.5, 0.15 );
-//    fPT->Range( -1.5, -1, 1.5, 46 );
-//    fPT->Range( -1.5, 50, 1.5, 190 );
-//    fPT->Range( -2.5, 50, 2.5, 190 );
-//    fPT->Range( 0, 50, 2.5, 190 );
-//    fPT->Range( -0.5, 50, 0.5, 190 );
-//    fPT->Range( 0, 50, 10, 190 );
-//    fPT->Range( 0, 50, 3, 190 );
-//    fPT->Range( -0.15, 50, 0.15, 190 );
-//    fPT->Range( -1, -0.7, 46, 1.2 );
 #ifdef DRAWDZDSQPT
     fPT->Range( -3.2, -3, 3.3, 33 );
 #endif
 #ifdef ROWS5
-//    fPT->Range( -0.5, -55, 2.5, 55 );	// X - Teta
-//    fPT->Range( -5, -55, 250, 55 );	// Z - Z
-//    fPT->Range( -0, -0.35, 2, 0.35 );	// Phi - Teta
-//    fPT->Range( -0.005, 0, 0.005, 0.02 );	// U - V
     fPT->Range( 0, -0.005, 0.02, 0.005 );	// U - V
 #endif
     // ---
@@ -190,9 +172,6 @@ void AliHLTTPCCADisplay::Update()
 #ifdef CANVASPT
   fPT->Update();
 #endif
-//  fCanvasPT->Update();
-//X   fYX->Print( "YX.pdf" );
-//X   fZX->Print( "ZX.pdf" );
 
 }
 
@@ -272,15 +251,13 @@ void AliHLTTPCCADisplay::SetCurrentSlice( AliHLTTPCCATracker *slice )
     double cy = r0;
     double cz = .5 * ( slice->Param().ZMax() + slice->Param().ZMin() );
     double dz = .5 * ( slice->Param().ZMax() - slice->Param().ZMin() ) * 1.2;
-//    fYX->Range( cx - dr, cy - dr*1.05, cx + dr, cy + dr );
-//    fYX->Range( cx - dr, -3, cx + dr, cy + dr );
     // --- norm ---
     fYX->Range( cx - dr, -25, cx + dr, cy + dr );
     fZX->Range( -10, -25, cz + dz, cy + dr );
     // ---
     // --- for tof test ---
-    fYX->Range( cx - dr, -5, cx + dr, cy + dr +20 );
-    fZX->Range( -10, -5, cz + dz, cy + dr +20 );
+//    fYX->Range( cx - dr, -5, cx + dr, cy + dr +20 );
+//    fZX->Range( -10, -5, cz + dz, cy + dr +20 );
     // ---
   }
 }

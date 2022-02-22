@@ -178,14 +178,12 @@ void AliHLTTPCCAGlobalPerformance::CheckMCTracks()
     // ---
       if( mc.NHits() <= 20 ) {
 //      if( mc.NMCRows() >= 15 && mc.NMCRows() <= 20 ) {
-	  mc.SetSet1( 1 );
-	  mcTrackData.SetSet1( 1 );
+	mc.SetSet1( 1 );
+	mcTrackData.SetSet1( 1 );
       }
-//      if( mc.NMCPoints() > 20 ) {
       if( mc.NHits() > 20 ) {
-//    if( mc.NMCRows() > 20 ) {
-	  mc.SetSet1( 2 );
-	  mcTrackData.SetSet1( 2 );
+	mc.SetSet1( 2 );
+	mcTrackData.SetSet1( 2 );
       }
     // ---
 
@@ -193,7 +191,6 @@ void AliHLTTPCCAGlobalPerformance::CheckMCTracks()
         if ( mc.P() >= AliHLTTPCCAParameters::RefThreshold ) {
           mc.SetSet( 2 );
           mcTrackData.SetSet( 2 );
-//        if ( mc.NMCRows() >= fTracker->Slice(0).Param().NRows() ) {
           if ( tmpnr >= fTracker->Slice(0).Param().NRows() ) {
             mc.SetSet( 3 );
             mcTrackData.SetSet( 3 );
@@ -213,7 +210,6 @@ void AliHLTTPCCAGlobalPerformance::CheckMCTracks()
             mc.SetSet30( 2 );
             mcTrackData.SetSet30( 2 );
             if ( mc.NMCRows() >= fTracker->Slice(0).Param().NRows() ) {
-//        if ( tmpnr >= fTracker->Slice(0).Param().NRows() ) {
               mc.SetSet30( 3 );
               mcTrackData.SetSet30( 3 );
             }
@@ -230,18 +226,14 @@ void AliHLTTPCCAGlobalPerformance::CheckMCTracks()
       if ( mc.NMCRows() < 30 && mc.NHits() <= 72 ) {
         if ( mc.P() >= AliHLTTPCCAParameters::ExtraThreshold ) {
           if ( mc.P() >= AliHLTTPCCAParameters::RefThreshold ) {
-//          mc.SetSet_l30( 2 );
             mcTrackData.SetSet_l30( 2 );
             mcTrackData.SetSet_l30_r10( 2 );
             if ( mc.NMCRows() >= fTracker->Slice(0).Param().NRows() ) {
-//        if ( tmpnr >= fTracker->Slice(0).Param().NRows() ) {
-//            mc.SetSet30( 3 );
               mcTrackData.SetSet_l30( 3 );
               mcTrackData.SetSet_l30_r10( 3 );
             }
           }
           else{
-//          mc.SetSet30( 1 );
             mcTrackData.SetSet_l30( 1 );
             mcTrackData.SetSet_l30_r10( 1 );
           }
@@ -276,9 +268,6 @@ void AliHLTTPCCAGlobalPerformance::MatchTracks()
 #endif
     tCA1.SetReco( 0 );
     tCA1.SetClone( false );
-// --- For merging debug and tuning only ---
-//    const AliHLTTPCCATracker& slice = fTracker->Slice(0);
-// ---
     const int nhits = tCA.NHits();
 //    if( nhits < 10 ) continue;
     int *lb = new int[nhits*3];
@@ -413,7 +402,7 @@ void AliHLTTPCCAGlobalPerformance::EfficiencyPerformance( )
 	  fEff.ghosts++;
       }
     else
-      /*if( recoData[iRTr].GetNHits() > 30 )*/ fEff.IncA( recoData[iRTr].GetNHits(), recoData[iRTr].GetPurity() );
+      fEff.IncA( recoData[iRTr].GetNHits(), recoData[iRTr].GetPurity() );
 #else
 
   const AliHLTTPCCAGBTrack &tCA = fTracker->Tracks()[iRTr];
@@ -942,16 +931,11 @@ void AliHLTTPCCAGlobalPerformance::Draw()
 //        if( hit1.IRow() != hit2.IRow() ) continue;
         if( hit1.IRow() != 5 ) continue;
 //        disp.SpecDrawMCTrackHitsGlobal( (*fMCTracks)[mct], fLocalMCPoints, fHitLabels, kRed, 0.5 );
-        std::cout<<"> Draw track "<<irt<<"\n";
-//        std::cout<<" - track.FirstHitRef(): "<<track.FirstHitRef()<<"\n";
-        std::cout<<" --- first hit: "<<fTracker->TrackHit(track.FirstHitRef())<<";   nHits: "<<track.NHits()<<";   last hit: "<<fTracker->TrackHit(track.FirstHitRef()+track.NHits()-1)<<"\n";
-        std::cout<<"     first row: "<<hit1.IRow()<<";   last row: "<<hit2.IRow()<<"\n";
         disp.SpecDrawRecoTrackGlobal( irt, kBlue, 0.3 );
 //        if( tCA.IsMerged() ) disp.SpecDrawRecoTrackGlobal( irt, kGreen, 0.3 );
         disp.Ask();
         disp.DrawTPC();
   }
-  disp.Ask();
   disp.Ask();
 #endif
 
@@ -1058,8 +1042,6 @@ void AliHLTTPCCAGlobalPerformance::Draw()
 	  float py_in_1 = sinPhi_in_1 / fabs(qpt_in_1);
 	  float pz_in_1 = dzds_in_1 / fabs(qpt_in_1);
 	  float pp_in_1 = sqrt( px_in_1*px_in_1 + py_in_1*py_in_1 + pz_in_1*pz_in_1 );
-//	  disp.SpecDrawLine( x_in_1, y_in_1, z_in_1, hit1.ISlice(), x_in_1-px_in_1*300, y_in_1-py_in_1*300, z_in_1-pz_in_1*300, hit1.ISlice(), kOrange, 2.5 );
-//	  disp.SpecDrawLine( x_in_1, y_in_1, z_in_1, hit1.ISlice(), x_in_1+py_in_1*300, y_in_1-px_in_1*300, z_in_1+pz_in_1*300, hit1.ISlice(), kOrange, 2.5 );
 	  AliHLTTPCCAMCTrack &mcT = (*fMCTracks)[testMC];
 	  int nFirstMC = mcT.FirstMCPointID();
 	  int nMCPoints = mcT.NMCPoints();
@@ -1111,7 +1093,6 @@ void AliHLTTPCCAGlobalPerformance::Draw()
 	    float sin1(fTracker->Slice(hit1.ISlice()).Param().CosAlpha());
 	    float Cyg = Cx * cos1 + Cy * sin1;
 	    float Cxg = -(Cy * cos1 - Cx * sin1);
-	    std::cout<<"               Cx: "<<Cx<<";   Cy: "<<Cy<<";   Cr: "<<Cr<<"\n";
 	    // ---
 	  }
 	  // --- circle/line
@@ -1126,8 +1107,6 @@ void AliHLTTPCCAGlobalPerformance::Draw()
 	  float x2_r = ((-(2*k_cl*b_cl - 2*Cx - 2*Cy*k_cl)+sqrt(d_cl))/(2+2*k_cl*k_cl));
 	  float y1_r = k_cl*x1_r + b_cl;
 	  float y2_r = k_cl*x2_r + b_cl;
-	  std::cout<<"<><><> x1_r: "<<x1_r<<";   y1_r: "<<y1_r<<"\n";
-	  std::cout<<"<><><> x2_r: "<<x2_r<<";   y2_r: "<<y2_r<<"\n";
 	  float x_lp = x1_r;
 	  float y_lp = y1_r;
 	  float x_up = x2_r;
@@ -1137,16 +1116,6 @@ void AliHLTTPCCAGlobalPerformance::Draw()
 	    y_lp = y2_r;
 	    x_up = x1_r;
 	    y_up = y1_r;
-	  }
-	  else {
-//	    disp.SpecDrawLine( Cx, Cy, z_in_1, hit1.ISlice(), x2_r, y2_r, z_in_1, hit1.ISlice(), kOrange, 2.5 );
-//	    x_lp = x2_r;
-//	    y_lp = y2_r;
-//	    x_up = x1_r;
-//	    y_up = y1_r;
-//	    z_lp = track_i.OuterParam().Z();
-//	    z_up = track_i.Param().Z();
-//	    std::swap( r0_l, r0_u );
 	  }
 	  float cos1(fTracker->Slice(hit1.ISlice()).Param().SinAlpha());
 	  float sin1(fTracker->Slice(hit1.ISlice()).Param().CosAlpha());
@@ -1174,17 +1143,12 @@ void AliHLTTPCCAGlobalPerformance::Draw()
 	  float AB_xy_l = 2*Cr*asin( 0.5*AB_xy/Cr );
 	  float BC_xy_l = 2*Cr*asin( 0.5*BC_xy/Cr );
 	  float BC_xy_u_l = 2*Cr*asin( 0.5*BC_xy_u/Cr );
-	  std::cout<<". AB_xy: "<<AB_xy<<";   AB_xy_l: "<<AB_xy_l<<"\n";
-	  std::cout<<". BC_xy: "<<BC_xy<<";   BC_xy_l: "<<BC_xy_l<<"\n";
 	  float AB_z = fabs( z1l - z3l );
 	  float BC_z = AB_z*BC_xy/AB_xy;
 	  float BC_z_u = AB_z*BC_xy_u/AB_xy;
-	  std::cout<<" > BC_z: "<<BC_z<<";   BC_z_u: "<<BC_z_u<<"\n";
 	  // ---
 	  float _dz1 = (AB_z*BC_xy_l)/AB_xy_l;
 	  float _dz2 = ( AB_z*BC_xy_u_l )/AB_xy_l;
-	  std::cout<<" dz: "<<AB_z<<";   dl1: "<<BC_xy_l<<";   dl: "<<AB_xy_l<<"\n";
-	  std::cout<<" _ _ _ dz1: "<<_dz1<<";   dz2: "<<_dz2<<"\n";
 	  if( track_i.Param().Z() < track_i.OuterParam().Z() ) {
 	    disp.DrawHitGlobal( x_lp_g, y_lp_g, z1l-_dz1, kGreen, 0.75 );
 	    disp.DrawHitGlobal( x_up_g, y_up_g, z3l+_dz2, kGreen, 0.75 );
@@ -1197,10 +1161,6 @@ void AliHLTTPCCAGlobalPerformance::Draw()
 	    disp.SpecDrawLine( x_up+3, y_up, z3l-_dz2, hit1r.ISlice(), x3l, y3l, z3l, hit1r.ISlice(), kOrange, 1. );
 	  }
 	  float h = 2*3.14*Cr*AB_z/AB_xy_l;
-	  std::cout<<"> AB_xy: "<<AB_xy<<"\n";
-	  std::cout<<"> z1: "<<z1l<<";   z3: "<<z3l<<";   dz: "<<fabs( z1l - z3l )<<"\n";
-	  std::cout<<"> Cr: "<<Cr<<";   dl: "<<AB_xy_l<<";   dz: "<<AB_z<<"\n";
-	  std::cout<<" _ _ _ _ _ h: "<<h<<"\n";
 	  disp.SpecDrawLineZ( i*3.5, 0, z1l, hit1r.ISlice(), x1l, y1l, z1l, hit1r.ISlice(), kGreen, 0.5 );
 	  disp.SpecDrawLineZ( i*3.5, 0, z1l, hit1r.ISlice(), i*3.5, 0, z1l+h, hit1r.ISlice(), kGreen, 3.5 );
 	}
@@ -1217,7 +1177,6 @@ void AliHLTTPCCAGlobalPerformance::Draw()
   for ( int imc = 0; imc < nMCTracks; imc++ ) {
 
       if( (((*fMCTracks)[imc]).NHits() <= 100) || (((*fMCTracks)[imc]).NMCRows() > 60) || (((*fMCTracks)[imc]).NMCRows() <= 5) ) continue;
-      std::cout<<" > imc: "<<imc<<";   nHits: "<<((*fMCTracks)[imc]).NHits()<<"\n";
       disp.SpecDrawMCTrackHitsGlobal( (*fMCTracks)[imc], fLocalMCPoints, fHitLabels, kRed, 0.5 );
 //      disp.Ask();
       for ( int irt = 0; irt < nRecoTracks; irt++ ) {
@@ -1671,16 +1630,7 @@ if( ( fabs(x_dn_r_g) < 3 && fabs(y_dn_r_g) < 3 ) || ( fabs(x_up_r_g) < 3 && fabs
     if( track.Param().Z() < track.OuterParam().Z() ) {
       z_dn_r = z_seg_1-dz_dn;
       z_up_r = z_seg_3+dz_up;
-//        disp.DrawHitGlobal( x_dn_r_g, y_dn_r_g, z_dn_r, kGreen, 0.75 );
-//        disp.DrawHitGlobal( x_up_r_g, y_up_r_g, z_up_r, kGreen, 0.75 );
-//        disp.SpecDrawLine( x_dn_r+1, y_dn_r, z_dn_r, hit2r.ISlice(), x_seg_1, y_seg_1, z_seg_1, hit2r.ISlice(), kGreen, 1. );
-//        disp.SpecDrawLine( x_up_r+1, y_up_r, z_up_r, hit2r.ISlice(), x_seg_3, y_seg_3, z_seg_3, hit2r.ISlice(), kGreen, 1. );
-    } //else {
-//        disp.DrawHitGlobal( x_dn_r_g, y_dn_r_g, z_dn_r, kOrange, 0.75 );
-//        disp.DrawHitGlobal( x_up_r_g, y_up_r_g, z_up_r, kOrange, 0.75 );
-//        disp.SpecDrawLine( x_dn_r+3, y_dn_r, z_dn_r, hit1r.ISlice(), x_seg_1, y_seg_1, z_seg_1, hit1r.ISlice(), kOrange, 1. );
-//        disp.SpecDrawLine( x_up_r+3, y_up_r, z_up_r, hit1r.ISlice(), x_seg_3, y_seg_3, z_seg_3, hit1r.ISlice(), kOrange, 1. );
-//    }
+    }
 //      disp.Ask();
     LooperSegment* segment = new LooperSegment;
     segment->iTr = irt;
@@ -1707,12 +1657,6 @@ if( ( fabs(x_dn_r_g) < 3 && fabs(y_dn_r_g) < 3 ) || ( fabs(x_up_r_g) < 3 && fabs
     segment->iMC = track.GetFirstMC();
     fSegments.push_back( *segment );
   }
-//  std::cout<<" NSegments: "<<fSegments.size()<<"\n";
-//  for( int i = 0; i < fSegments.size(); i++ ) {
-//    std::cout<<" - iSeg: "<<i<<";   Cx: "<<fSegments[i].Cx<<";   Cy: "<<fSegments[i].Cy<<";   Cr: "<<fSegments[i].Cr<<"\n";
-//  }
-//  disp.SaveCanvasToFile( "DrawLoopersTest.pdf" );
-//  disp.Ask();
 }
 
 void AliHLTTPCCAGlobalPerformance::CheckSegments()
@@ -1739,24 +1683,15 @@ void AliHLTTPCCAGlobalPerformance::CheckSegments()
 	loopers.push_back(1);
 	fNLoopers++;
       }
-//    std::cout<<" - iSeg: "<<iSeg<<";   Cx: "<<fSegments[iSeg].Cx<<";   Cy: "<<fSegments[iSeg].Cy<<";   Cr: "<<fSegments[iSeg].Cr<<"\n";
     for( int jSeg = iSeg+1; jSeg < fSegments.size(); jSeg++ ) {
       if( fSegments[jSeg].isUsed ) continue;
       if( fSegments[iSeg].x_h_up == fSegments[jSeg].x_h_up && fSegments[iSeg].y_h_up == fSegments[jSeg].y_h_up
 	  && fSegments[iSeg].x_h_dn == fSegments[jSeg].x_h_dn && fSegments[iSeg].y_h_dn == fSegments[jSeg].y_h_dn ) continue;
-//      std::cout<<" --- jSeg: "<<jSeg<<";   Cx: "<<fSegments[jSeg].Cx<<";   Cy: "<<fSegments[jSeg].Cy<<";   Cr: "<<fSegments[jSeg].Cr<<"\n";
       if( fabs(fSegments[iSeg].x_dn - fSegments[jSeg].x_dn) < 5 && fabs(fSegments[iSeg].x_up - fSegments[jSeg].x_up) < 5 ) {
-//	std::cout<<" ----- Catch x_dn\n";
 	if( fabs(fSegments[iSeg].y_dn - fSegments[jSeg].y_dn) < 5 && fabs(fSegments[iSeg].y_up - fSegments[jSeg].y_up) < 5 ) {
-//	  std::cout<<" ----- Catch y_dn";
 	  float r_lim = (fSegments[iSeg].Cr + fSegments[jSeg].Cr)/2;
 	  r_lim *= 0.23;
 	  if( fabs(fSegments[iSeg].Cr - fSegments[jSeg].Cr) < r_lim ) {
-//	    std::cout<<" -----> Catch R\n";
-//	    if( !fSegments[iSeg].isUsed ) {
-//	      fSegments[iSeg].isUsed = true;
-//	      fSegments[iSeg].iLooper = fNLoopers;
-//	    }
 	    fSegments[jSeg].isUsed = true;
 	    fSegments[jSeg].iLooper = fSegments[iSeg].iLooper;
 	    loopers[fSegments[iSeg].iLooper]++;

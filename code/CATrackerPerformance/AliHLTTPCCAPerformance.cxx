@@ -211,7 +211,6 @@ void AliHLTTPCCAPerformance::WriteDir2Current( TObject *obj )
 //  printf( " ... ... ... | obj name: %s\n", oname.Data() );
   // ---
   if ( !obj->IsFolder() ) {
-//      std::cout<<" ___ ___ ___ --- ( !obj->IsFolder() ) => obj->Write()\n";
       obj->Write();
   }
   else {
@@ -221,13 +220,9 @@ void AliHLTTPCCAPerformance::WriteDir2Current( TObject *obj )
 //    printf( "             > cur name: %s\n", dname1.Data() );
     // ---
     ((TDirectory*)obj)->cd();
-//    std::cout<<"             > ((TDirectory*)obj)->cd() - ok\n";
     TList *listSub = ( ( TDirectory* )obj )->GetList();
-//    std::cout<<"             > TList *listSub = ( ( TDirectory* )obj )->GetList() - ok\n";
     TIter it( listSub );
-//    std::cout<<"             > TIter it( listSub ) - ok\n";
     while ( TObject *obj1 = it() ) {
-//	std::cout<<"             >>> Do recursive\n";
 	WriteDir2Current( obj1 );
     }
     cur->cd();

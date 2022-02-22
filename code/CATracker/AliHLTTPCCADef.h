@@ -38,7 +38,7 @@
 //#define TETA
 //#define NO_NTRACKLET_FIX
 //#define FOURHITSEGMENTS
-//#define LOOPER_TEST
+#define LOOPER_TEST
 //#define VC_GATHER_SCATTER
 
 /**
